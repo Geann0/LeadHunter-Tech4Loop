@@ -10,6 +10,18 @@ export interface Lead {
   phone: string;
   address: string;
   url: string;
+  city?: string;
+  segment?: string;
+  // Nível 3 - Dados Estratégicos
+  cnpj?: string;
+  situacao?: "Ativa" | "Inapta" | "Baixada";
+  dataAbertura?: string;
+  anoFundacao?: number;
+  porte?: "MEI" | "ME" | "EPP" | "LTDA" | "SA";
+  cnae?: string;
+  cnaePrincipal?: string;
+  capitalSocial?: number;
+  faixaCapital?: "Pequeno" | "Médio" | "Estruturado";
   extractedAt: string;
   status: "success" | "partial" | "error";
 }

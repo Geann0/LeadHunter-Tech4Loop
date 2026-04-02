@@ -14,6 +14,7 @@ import { StatusBadge } from "./components/StatusBadge";
 import { StatCard } from "./components/StatCard";
 import { TerminalView } from "./components/TerminalView";
 import { ResultsTable } from "./components/ResultsTable";
+import { DiagnosticPanel } from "./components/DiagnosticPanel";
 import { Lead, LogMessage, ScrapeProgress, Stats } from "./types";
 import { formatTime, generateId } from "./lib/utils";
 import { cn } from "./lib/utils";
@@ -405,6 +406,9 @@ function App() {
             )}
           </div>
         </div>
+
+        {/* Diagnostic Panel */}
+        <DiagnosticPanel />
 
         {/* Stats Dashboard */}
         <div className="grid grid-cols-3 gap-4">

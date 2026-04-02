@@ -1,0 +1,48 @@
+appId: com.tech4loop.leadhunter
+productName: LeadHunter Pro
+directories:
+  output: dist_installer
+  buildResources: public
+  
+files:
+  - dist/**/*
+  - dist-electron/**/*
+  - node_modules/playwright-core/**/*
+  - node_modules/playwright/**/*
+  - node_modules/ffmpeg-static/**/*
+  
+extraResources:
+  - from: public
+    to: public
+
+win:
+  target:
+    - nsis
+    - portable
+    - msi
+  icon: public/icon.ico
+  certificateFile: null
+  
+nsis:
+  oneClick: false
+  installerIcon: public/icon.ico
+  uninstallerIcon: public/icon.ico
+  installerHeader: public/icon.ico
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: LeadHunter Pro
+  installerFooterCopyright: "© 2026 Tech4Loop. All rights reserved."
+  
+portable:
+  artifactName: "${productName}-${version}-portable.exe"
+  
+msi:
+  upgradeCode: "{12345678-1234-1234-1234-123456789012}"
+  
+asar: true
+asarUnpack:
+  - node_modules/playwright-core/**/*
+  - node_modules/playwright/**/*
+  - node_modules/ffmpeg-static/**/*
+  - dist-electron/preload.cjs
